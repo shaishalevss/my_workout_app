@@ -26,3 +26,9 @@ flutter:
     - family: Quantico
       fonts:
         - asset: fonts/Quantico-BoldItalic.ttf
+    - family: FingerPaint
+      fonts:
+        - asset: fonts/FingerPaint-Regular.ttf
+    - family: Bangers
+      fonts:
+        - asset: fonts/Bangers-Regular.ttf

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_workout/components/timerDisplay.dart';
+import 'package:my_workout/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -51,8 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.green,
                 borderRadius: BorderRadius.all(Radius.circular(12.0)),
               ),
-              child: Text('Plan A', textAlign: TextAlign.center,
-              ),
+              child: Text('Plan A', textAlign: TextAlign.center,style: kWorkoutLabelTextStyle),
             ),Container(
               width: double.infinity,
               height: 90.0,
@@ -62,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.blue,
                 borderRadius: BorderRadius.all(Radius.circular(12.0)),
               ),
-              child: Text('Plan B', textAlign: TextAlign.center,
-              ),
+              child: Text('Plan B', textAlign: TextAlign.center,style: kWorkoutLabelTextStyle),
             ),Container(
               width: double.infinity,
               height: 90.0,
@@ -73,8 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.red,
                 borderRadius: BorderRadius.all(Radius.circular(12.0)),
               ),
-              child: Text('Select Area', textAlign: TextAlign.center,
-              ),
+              child: Text('Select Area', textAlign: TextAlign.center,style: kWorkoutLabelTextStyle,),
             ),
           ],
         ),
