@@ -41,19 +41,19 @@ class _TimerCountDownState extends State<TimerCountDown> {
 
     if (_timer != null) {
       _timer.cancel();
-      return;
-    }
-
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        if (_counter > 0) {
-          _counter--;
-        } else {
-          _timer.cancel();
-          Navigator.pop(context);
-        }
+      _timer = null;
+    } else {
+      _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+        setState(() {
+          if (_counter > 0) {
+            _counter--;
+          } else {
+            _timer.cancel();
+            Navigator.pop(context);
+          }
+        });
       });
-    });
+    }
   }
 
   @override
@@ -108,3 +108,23 @@ class _TimerCountDownState extends State<TimerCountDown> {
     );
   }
 }
+
+// void _startTimer() {
+//   _counter = getCounter();
+//
+//   if (_timer != null) {
+//     _timer.cancel();
+//     _timer = null;
+//   } else {
+//     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+//       setState(() {
+//         if (_counter > 0) {
+//           _counter--;
+//         } else {
+//           _timer.cancel();
+//           Navigator.pop(context);
+//         }
+//       });
+//     });
+//   }
+// }
