@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:my_workout/components/timerDisplay.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _counter = 4;
+  int _counter = 65;
   Timer _timer;
 
   String getTime() {
@@ -50,6 +51,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (context) => SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: TimerCountDown(),
+              ),
+            ),
+          );
+        },
+        backgroundColor: Colors.blue,
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.black54,
         title: Text(
@@ -60,39 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              (_counter > 0)
-                  ? Text('')
-                  : Text(
-                      'DONE!',
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        color: Colors.yellow,
-                      ),
-                    ),
-              Container(
-                child: Text(
-                  getTime(),
-                  style: TextStyle(fontSize: 50.0),
-                ),
-              ),
-              FlatButton(
-                child: Text(
-                  'Start Countdown',
-                  style: TextStyle(fontSize: 20.0, color: Colors.white),
-                ),
-                color: Colors.green,
-                disabledColor: Colors.red,
-                onPressed: () {
-                  print('GO');
-                  _startTimer();
-                },
-              )
-            ],
-          ),
+        child: Container(
+          child: Text('Text'),
         ),
       ),
     );
