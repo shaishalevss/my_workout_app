@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: TimerCountDown(),
               ),
             ),
-            // isDismissible: false,
+            isDismissible: false,
           );
         },
         backgroundColor: Colors.blue,
@@ -30,16 +30,53 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       appBar: AppBar(
         backgroundColor: Colors.black54,
-        title: Text(
-          'My Workout Routine',
-          style: TextStyle(
-            fontFamily: 'Quantico',
+        title: Center(
+          child: Text(
+            'My Workout Routine',
+            style: TextStyle(
+              fontFamily: 'Quantico',
+            ),
           ),
         ),
       ),
       body: SafeArea(
-        child: Container(
-          child: Text('Text'),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: 90.0,
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 20.0, right: 20.0, left: 20.0),
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.all(Radius.circular(12.0)),
+              ),
+              child: Text('Plan A', textAlign: TextAlign.center,
+              ),
+            ),Container(
+              width: double.infinity,
+              height: 90.0,
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 20.0, right: 20.0, left: 20.0),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.all(Radius.circular(12.0)),
+              ),
+              child: Text('Plan B', textAlign: TextAlign.center,
+              ),
+            ),Container(
+              width: double.infinity,
+              height: 90.0,
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 20.0, right: 20.0, left: 20.0),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.all(Radius.circular(12.0)),
+              ),
+              child: Text('Select Area', textAlign: TextAlign.center,
+              ),
+            ),
+          ],
         ),
       ),
     );

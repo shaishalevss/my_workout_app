@@ -1,6 +1,6 @@
 # my_workout
 
-A new Flutter application.
+My own workout application for my own personal use.
 
 ## Getting Started
 
