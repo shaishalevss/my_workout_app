@@ -7,6 +7,7 @@ import 'package:my_workout/screens/select_area.dart';
 import 'package:provider/provider.dart';
 import 'models/drill_data.dart';
 import 'screens/home_screen.dart';
+import 'package:my_workout/screens/settings_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,13 +15,6 @@ void main() {
       .then((_) {
     runApp(MyApp());
   });
-}
-
-class Main extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/' : (context) => HomeScreen(),
           'planB' : (context) => PlanBScreen(),
           'selectArea' : (context) => SelectAreaScreen(),
+          'settings' : (context) => SettingsScreen(),
         },
       ),
     );

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_workout/components/timerDisplay.dart';
-import 'package:my_workout/constants.dart';
 import 'package:my_workout/components/plan_selector_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,31 +6,25 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Color(0xFFDC143C),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showModalBottomSheet(
-            isScrollControlled: true,
-            context: context,
-            builder: (context) => SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: TimerCountDown(),
-              ),
-            ),
-            isDismissible: false,
-          );
-        },
-        backgroundColor: Colors.blue,
-        child: Icon(Icons.add),
-      ),
       appBar: AppBar(
         backgroundColor: Colors.black,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.settings,),
+            onPressed: () => Navigator.pushNamed(context, 'settings'),
+          )
+        ],
         title: Center(
           child: Text(
             'My Workout Routine',
@@ -56,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 route: () => Navigator.pushNamed(context, 'selectArea')),
             Container(
               // height: 70.0,
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1, vertical: screenHeight * 0.05),
               child: Image.asset('images/gym2.jpg'),
             ),
           ],

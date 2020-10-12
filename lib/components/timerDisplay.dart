@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:my_workout/constants.dart';
 
 class TimerCountDown extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class TimerCountDown extends StatefulWidget {
 }
 
 class _TimerCountDownState extends State<TimerCountDown> {
-  int _counter = 7;
+  int _counter = kTimerTime;
   Timer _timer;
 
   @override
@@ -109,23 +110,3 @@ class _TimerCountDownState extends State<TimerCountDown> {
     );
   }
 }
-
-// void _startTimer() {
-//   _counter = getCounter();
-//
-//   if (_timer != null) {
-//     _timer.cancel();
-//     _timer = null;
-//   } else {
-//     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-//       setState(() {
-//         if (_counter > 0) {
-//           _counter--;
-//         } else {
-//           _timer.cancel();
-//           Navigator.pop(context);
-//         }
-//       });
-//     });
-//   }
-// }

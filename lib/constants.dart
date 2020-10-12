@@ -6,3 +6,5 @@ const kWorkoutLabelTextStyle = TextStyle(
   letterSpacing: 4.0,
   color: Colors.white,
 );
+
+const int kTimerTime = 120;
