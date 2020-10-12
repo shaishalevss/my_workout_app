@@ -7,7 +7,7 @@ class TimerCountDown extends StatefulWidget {
 }
 
 class _TimerCountDownState extends State<TimerCountDown> {
-  int _counter = 67;
+  int _counter = 7;
   Timer _timer;
 
   @override
@@ -59,6 +59,7 @@ class _TimerCountDownState extends State<TimerCountDown> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: EdgeInsets.all(22.0),
       decoration: BoxDecoration(
           color: Colors.red,

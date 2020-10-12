@@ -45,10 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            planSelectorButton(text: 'PLAN A', route: () => Navigator.pushNamed(context, 'planA')),
-            planSelectorButton(text: 'PLAN B',route: () => Navigator.pushNamed(context, 'planB')),
-            planSelectorButton(text: 'SELECT AREA',route: () => Navigator.pushNamed(context, 'selectArea')),
-            // Image.asset('images/gym.jpg'),
+            planSelectorButton(
+                text: 'PLAN A',
+                route: () => Navigator.pushNamed(context, 'planA')),
+            planSelectorButton(
+                text: 'PLAN B',
+                route: () => Navigator.pushNamed(context, 'planB')),
+            planSelectorButton(
+                text: 'SELECT AREA',
+                route: () => Navigator.pushNamed(context, 'selectArea')),
+            Container(
+              // height: 70.0,
+              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
+              child: Image.asset('images/gym2.jpg'),
+            ),
           ],
         ),
       ),
