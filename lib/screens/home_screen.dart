@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_workout/components/timerDisplay.dart';
 import 'package:my_workout/constants.dart';
+import 'package:my_workout/components/plan_selector_button.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDC143C),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -30,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.black54,
+        backgroundColor: Colors.black,
         title: Center(
           child: Text(
             'My Workout Routine',
@@ -43,37 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              height: 90.0,
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(top: 20.0, right: 20.0, left: 20.0),
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-              ),
-              child: Text('Plan A', textAlign: TextAlign.center,style: kWorkoutLabelTextStyle),
-            ),Container(
-              width: double.infinity,
-              height: 90.0,
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(top: 20.0, right: 20.0, left: 20.0),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-              ),
-              child: Text('Plan B', textAlign: TextAlign.center,style: kWorkoutLabelTextStyle),
-            ),Container(
-              width: double.infinity,
-              height: 90.0,
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(top: 20.0, right: 20.0, left: 20.0),
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-              ),
-              child: Text('Select Area', textAlign: TextAlign.center,style: kWorkoutLabelTextStyle,),
-            ),
+            planSelectorButton(text: 'PLAN A', route: () => Navigator.pushNamed(context, 'planA')),
+            planSelectorButton(text: 'PLAN B',route: () => Navigator.pushNamed(context, 'planB')),
+            planSelectorButton(text: 'SELECT AREA',route: () => Navigator.pushNamed(context, 'selectArea')),
+            // Image.asset('images/gym.jpg'),
           ],
         ),
       ),
