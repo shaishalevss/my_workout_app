@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:my_workout/screens/home_screen.dart';
 import 'package:my_workout/screens/plan_a.dart';
 import 'package:my_workout/screens/plan_b.dart';
 import 'package:my_workout/screens/select_area.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/provider.dart';
 import 'models/drill_data.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MyApp());
+  });
 }
 
 class Main extends StatelessWidget {

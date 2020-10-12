@@ -9,41 +9,45 @@ class DrillTile extends StatelessWidget {
 
   DrillTile({this.isChecked, this.drillTitle, this.drillSets ,this.checkboxCallback});
 
-  String getCurrentSetsNumber(){
-    return '$drillSets';
-  }
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Row(
         children: [
-          Text(
-            drillTitle,
-            style: TextStyle(
-              fontFamily: 'Kalam',
-              fontSize: 20.0,
-              decoration: isChecked ? TextDecoration.lineThrough : null,
-            ),
-          ),
+          DrillTextAndSets(text: drillTitle, isChecked: isChecked, fontSize: 20.0,),
         ],
       ),
       trailing: Wrap(
         children: <Widget>[
-        Text(
-          getCurrentSetsNumber(),
-        style: TextStyle(
-          fontFamily: 'Kalam',
-          fontSize: 30.0,
-          decoration: isChecked ? TextDecoration.lineThrough : null,
-        ),
-      )
-          ,Checkbox(
+          DrillTextAndSets(text: '$drillSets', isChecked: isChecked, fontSize: 30.0,)
+        ,Checkbox(
           value: isChecked,
           checkColor: Color(0xFFDC143C),
           activeColor: Colors.white,
           onChanged: checkboxCallback,
         )],
+      ),
+    );
+  }
+}
+
+class DrillTextAndSets extends StatelessWidget {
+
+  final String text;
+  final bool isChecked;
+  final double fontSize;
+
+  DrillTextAndSets({this.text, this.isChecked, this.fontSize});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: 'Kalam',
+        fontSize: fontSize,
+        decoration: isChecked ? TextDecoration.lineThrough : null,
       ),
     );
   }
