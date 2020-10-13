@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_workout/models/drill_data.dart';
 import 'package:my_workout/widgets/drills_list.dart';
-import 'package:provider/provider.dart';
 
 class PlanAScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +13,7 @@ class PlanAScreen extends StatelessWidget {
         ),
       ),
       body: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/planbackground.jpg"),
@@ -24,6 +24,7 @@ class PlanAScreen extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
+                width: double.infinity,
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -31,7 +32,7 @@ class PlanAScreen extends StatelessWidget {
                     topRight: Radius.circular(20.0),
                   ),
                 ),
-                child: DrillsList(),
+                child: DrillsList('a'),
               ),
             )
           ],

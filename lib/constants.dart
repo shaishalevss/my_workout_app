@@ -7,4 +7,4 @@ const kWorkoutLabelTextStyle = TextStyle(
   color: Colors.white,
 );
 
-const int kTimerTime = 120;
+int kTimerTime = 5;

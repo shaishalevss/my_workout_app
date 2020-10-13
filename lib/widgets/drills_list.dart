@@ -3,8 +3,12 @@ import 'package:my_workout/widgets/drill_tile.dart';
 import 'package:provider/provider.dart';
 import 'package:my_workout/models/drill_data.dart';
 import 'package:my_workout/components/timerDisplay.dart';
+import 'package:my_workout/models/drill.dart';
 
 class DrillsList extends StatefulWidget {
+
+  final String planSelection;
+  DrillsList(this.planSelection);
 
   @override
   _DrillsListState createState() => _DrillsListState();
@@ -29,11 +33,19 @@ class _DrillsListState extends State<DrillsList> {
 
   @override
   Widget build(BuildContext context) {
+
     return Consumer<DrillData>(
       builder: (context, drillData, child) {
         return ListView.builder(
           itemBuilder: (context, index) {
-            final drill = drillData.drillsA[index];
+            var drill = drillData.drillsA[index];
+            if(widget.planSelection == 'a'){
+              drill = drillData.drillsA[index];
+            }else if(widget.planSelection == 'b'){
+              drill = drillData.drillsB[index];
+            } else{
+              drill = drillData.drillsA[index];
+            }
             return GestureDetector(
               child: DrillTile(
                 drillTitle: drill.name,
@@ -41,12 +53,13 @@ class _DrillsListState extends State<DrillsList> {
                 checkboxCallback: (bool currentCheckboxState){
                   setState(() {
                     if(drill.sets > 1){
-                      // ignore: await_only_futures
-                      drillData.decreaseSet(index);
+                      drillData.decreaseSet(index, widget.planSelection);
+                      _showMyDialog();
+                    } else if(drill.sets == 1){
+                      drillData.decreaseSet(index, widget.planSelection);
+                      drillData.updateDrill(drill);
                       _showMyDialog();
                     } else {
-                      // ignore: await_only_futures
-                      drillData.decreaseSet(index);
                       drillData.updateDrill(drill);
                       (drill.isDone) ? _showMyDialog() : print('hey');
                     }
@@ -56,7 +69,7 @@ class _DrillsListState extends State<DrillsList> {
               ),
             );
           },
-          itemCount: drillData.drillCount,
+          itemCount: drillData.drillCount(widget.planSelection),
         );
       },
     );
