@@ -37,3 +37,6 @@ flutter:
     - family: Kalam
       fonts:
         - asset: fonts/Kalam-Regular.ttf
+    - family: GveretLevin
+      fonts:
+        - asset: fonts/GveretLevinAlefAlefAlef-Regular.ttf

@@ -27,8 +27,8 @@ class DrillData extends ChangeNotifier {
 
   List<Drill> _drillsB = [
     Drill(name: 'Warmup', sets: 0),
-    Drill(name: 'Squats', sets: 2),
-    Drill(name: 'Sumo Squats', sets: 2),
+    Drill(name: 'Pull-Up/Upper Poly', sets: 2),
+    Drill(name: 'מתיחה צמודה', sets: 2),
     Drill(name: 'Romanian Deadlift/Elevate Hips', sets: 2),
     Drill(name: 'Bulgarian Split Squats', sets: 2),
     Drill(name: 'Standing Calves', sets: 2),

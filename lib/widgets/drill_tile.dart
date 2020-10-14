@@ -75,7 +75,7 @@ class DrillTextAndSets extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          fontFamily: 'Kalam',
+          fontFamily: 'GveretLevin',
           fontSize: fontSize,
           decoration: isChecked ? TextDecoration.lineThrough : null,
         ),
