@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_workout/widgets/drills_list.dart';
+import 'package:my_workout/constants.dart';
 
 class PlanBScreen extends StatelessWidget {
 
@@ -9,7 +10,7 @@ class PlanBScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Center(
-          child: Text('Plan B'),
+          child: Text('Plan B', style: kAppBarTextStyle,),
         ),
       ),
       body: Container(

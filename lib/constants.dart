@@ -8,3 +8,7 @@ const kWorkoutLabelTextStyle = TextStyle(
 );
 
 int kTimerTime = 5;
+
+const TextStyle kAppBarTextStyle = TextStyle(
+  fontFamily: 'Quantico',
+);

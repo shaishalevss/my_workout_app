@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_workout/components/plan_selector_button.dart';
+import 'package:my_workout/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -28,9 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Center(
           child: Text(
             'My Workout Routine',
-            style: TextStyle(
-              fontFamily: 'Quantico',
-            ),
+            style: kAppBarTextStyle,
           ),
         ),
       ),

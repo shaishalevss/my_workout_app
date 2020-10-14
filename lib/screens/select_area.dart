@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_workout/constants.dart';
 
 class SelectAreaScreen extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class SelectAreaScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Center(
-          child: Text('Select Area'),
+          child: Text('Select Area', style: kAppBarTextStyle,),
         ),
       ),
       body: Container(
